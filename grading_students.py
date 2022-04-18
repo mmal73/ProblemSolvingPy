@@ -18,15 +18,14 @@ def gradingStudents(grades):
     new_grades = []
     attemps_to_sum = 3
     for grade in grades:
-        if(grade >= 38):
-            i = 1
-            aux_grade = grade
-            while(i < attemps_to_sum):
-                aux_grade += 1
-                if (aux_grade % 5 == 0):
-                    grade = aux_grade
-                    break
-                i += 1
+        i = 1
+        aux_grade = grade
+        while(i < attemps_to_sum):
+            aux_grade += 1
+            if (aux_grade % 5 == 0 and aux_grade >= 40):
+                grade = aux_grade
+                break
+            i += 1
         new_grades.append(grade)
 
     return new_grades
